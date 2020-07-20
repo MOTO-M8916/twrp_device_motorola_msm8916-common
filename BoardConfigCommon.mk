@@ -50,35 +50,15 @@ BOARD_KERNEL_IMAGE_NAME := zImage
 BOARD_CUSTOM_BOOTIMG_MK := $(VENDOR_PATH)/mkbootimg.mk
 TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8916
-TARGET_RECOVERY_QCOM_RTC_FIX := true
-
-PLATFORM_SECURITY_PATCH := 2029-10-01
 
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
-TARGET_RECOVERY_FSTAB := $(VENDOR_PATH)/recovery/root/etc/twrp.fstab
-TW_INCLUDE_FUSE_EXFAT       := true # exFAT support
-TW_INCLUDE_FUSE_NTFS        := true # NTFS support
-
-RECOVERY_SDCARD_ON_DATA := true
+TARGET_RECOVERY_FSTAB := $(VENDOR_PATH)/recovery/root/recovery.fstab
 
 # don't take forever to wipe
 BOARD_SUPPRESS_SECURE_ERASE := true
 
-# Keymaster
-TARGET_PROVIDES_KEYMASTER := true
-
-# Crypto
-TARGET_HW_DISK_ENCRYPTION := true
-TW_INCLUDE_CRYPTO := true
-TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
-
-# TWRP
 TARGET_RECOVERY_PIXEL_FORMAT := RGB_565
-TW_NEW_ION_HEAP := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
-TW_SCREEN_BLANK_ON_BOOT := true
-TW_USE_TOOLBOX := true
-TW_INPUT_BLACKLIST := "hbtp_vm"
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
