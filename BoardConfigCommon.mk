@@ -58,21 +58,11 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 TARGET_RECOVERY_FSTAB := $(VENDOR_PATH)/recovery/root/etc/twrp.fstab
-TW_INCLUDE_FUSE_EXFAT       := true # exFAT support
-TW_INCLUDE_FUSE_NTFS        := true # NTFS support
 
 RECOVERY_SDCARD_ON_DATA := true
 
 # don't take forever to wipe
 BOARD_SUPPRESS_SECURE_ERASE := true
-
-# Keymaster
-TARGET_PROVIDES_KEYMASTER := true
-
-# Crypto
-TARGET_HW_DISK_ENCRYPTION := true
-TW_INCLUDE_CRYPTO := true
-TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
 
 # TWRP
 TARGET_RECOVERY_PIXEL_FORMAT := RGB_565
